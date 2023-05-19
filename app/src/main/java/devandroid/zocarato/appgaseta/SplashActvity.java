@@ -8,7 +8,6 @@ import android.os.Handler;
 
 import devandroid.zocarato.appgaseta.database.GasEtaDB;
 import devandroid.zocarato.appgaseta.view.GasEtaActivity;
-import devandroid.zocarato.appgaseta.view.MainActivity;
 
 public class SplashActvity extends AppCompatActivity {
 
@@ -17,7 +16,7 @@ public class SplashActvity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_actvity);
+        setContentView(R.layout.activity_splash);
 
         cumutarTelaSplash();
     }
