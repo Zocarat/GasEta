@@ -1,7 +1,6 @@
 package devandroid.zocarato.appgaseta.model;
 
 public class Combustivel {
-
     private int id;
     private String nomeDoCombustivel;
     private double precoDoCombustivel;

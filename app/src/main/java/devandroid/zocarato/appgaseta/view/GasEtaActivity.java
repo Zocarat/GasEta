@@ -25,8 +25,6 @@ public class GasEtaActivity extends AppCompatActivity {
     Combustivel combustivelGasolina;
     Combustivel combustivelEtanol;
 
-
-
     EditText edit_gasolina;
     EditText edit_etanol;
 
@@ -40,10 +38,7 @@ public class GasEtaActivity extends AppCompatActivity {
     double precoGasolina;
     double precoEtanol;
     String recomendação;
-
     List<Combustivel> dados;
-
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,6 +49,13 @@ public class GasEtaActivity extends AppCompatActivity {
         controller = new CombustivelController(GasEtaActivity.this);
 
         dados = controller.getListaDeDados();
+
+        Combustivel objAlteracao = dados.get(1);
+
+        objAlteracao.setRecomendacao("lalalalal");
+        objAlteracao.setNomeDoCombustivel("vodka ");
+
+       // controller.alterar(objAlteracao);
 
         //associa variaveis com id
         edit_gasolina = findViewById(R.id.edit_gasolina);
@@ -152,10 +154,6 @@ public class GasEtaActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
-
-
 
 
         Toast.makeText(GasEtaActivity.this , UtilGasEta.mensagem(),

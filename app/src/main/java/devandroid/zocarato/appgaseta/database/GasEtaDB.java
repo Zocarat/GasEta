@@ -40,7 +40,7 @@ public class GasEtaDB extends SQLiteOpenHelper {
 
         db.execSQL(sqlTabelaCombustivel);
 
-        int i = 0;
+
 
     }
 
@@ -91,10 +91,47 @@ public class GasEtaDB extends SQLiteOpenHelper {
 
     }
 
+    public void alterarObjeto (String tabela, ContentValues dados){
+
+        //ID do registro a ser alterado (PK)
+        // Update TABEL set campo = novodado WHERE id = x
+        int id = dados.getAsInteger("id");  // recebe variavel como String e convert para int
+
+        db.update(tabela,dados,"id = ?", new String[]{Integer.toString(id)});
+
+
+
+
+    }
 
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Método para implementar um GRUD
 // C - Create criar o banco de dados e as tabelas

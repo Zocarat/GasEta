@@ -23,11 +23,6 @@ public class CombustivelController extends GasEtaDB {
         preferences = activity.getSharedPreferences(NOME_PREFERENCES,0);
         dadosPreferences = preferences.edit();
 
-
-
-
-
-
     }
 
     public void salvar (Combustivel combustivel){
@@ -43,15 +38,23 @@ public class CombustivelController extends GasEtaDB {
         dados.put("precoDoCombustivel", combustivel.getPrecoDoCombustivel());
         dados.put("recomendacao", combustivel.getRecomendacao());
 
-
-
-
         salvarObjeto("Combustivel", dados);
-
     }
 
     public List<Combustivel> getListaDeDados (){
         return listarDados();           //chama funcao da camada de dados (GasEtaDB)
+    }
+
+    public void alterar (Combustivel combustivel){
+
+        ContentValues dados = new ContentValues();
+
+        dados.put("id", combustivel.getId());
+        dados.put("nomeDoCombustivel", combustivel.getNomeDoCombustivel());
+        dados.put("precoDoCombustivel", combustivel.getPrecoDoCombustivel());
+        dados.put("recomendacao", combustivel.getRecomendacao());
+
+        alterarObjeto("Combustivel", dados);
     }
 
     public void limpar (){
